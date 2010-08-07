@@ -1,6 +1,6 @@
 Section # must ensure that the core section class loads first
 
-Section.has_many :section_property_values
+#Section.has_many :section_property_values
 #Section.after_save :set_new_section_property_values
 #module SectionPropertyExtensions
 #  module ClassMethods
@@ -14,9 +14,9 @@ Section.has_many :section_property_values
 #Section.send :include, SectionPropertyExtensions::InstanceMethods
 
 class Section
-#  has_many :section_property_values
-#  require 'ruby-debug'
-#  after_save :set_new_section_property_values
+  has_many :section_property_values
+  require 'ruby-debug'
+  after_save :set_new_section_property_values
 
   def section_property_from_key(key)
       property = SectionProperty.find_by_key(key)
